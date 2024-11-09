@@ -14,4 +14,7 @@ Repo contents located in Fetch Rewards Code:
   * Python Load Receipts to SQL.py
   * Python Load Users to SQL.py
   * Python User JSON uniqueness violation.py (This is to confirm there exists pure duplicate rows in the JSON file)
+  * brands.json
+  * receipts.json
+  * users.json
  
