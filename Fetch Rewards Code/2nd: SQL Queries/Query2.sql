@@ -11,7 +11,7 @@ WITH MaxDate AS (
 ),
 RecentUsers AS (
     SELECT 
-        id AS userId
+        distinct id AS userId -- using distinct because there are duplicates in this table
     FROM 
         fetch.users, MaxDate
     WHERE 
@@ -59,14 +59,14 @@ ORDER BY
  ________________________________________________________________________________________________________________
  * RESULTS 12 row(s) fetched on 2024-11-09 at 22:55:17
  
- * BrandName				TotalSpend		TotalTransactions		SpendComparison		TransactionComparison
-1	Tostitos				23,812.97		11						Most Spend			Most Transactions
-2	Swanson					14,907.77		11						Not Most Spend		Most Transactions
-3	Pepperidge Farm			14,165.85		1						Not Most Spend		Not Most Transactions
+#	BrandName				TotalSpend		TotalTransactions		SpendComparison		TransactionComparison
+1	Tostitos				15,799.37		11						Most Spend			Most Transactions
+2	Pepperidge Farm			14,165.85		1						Not Most Spend		Not Most Transactions
+3	Prego					9,443.9			1						Not Most Spend		Not Most Transactions
 4	V8						9,443.9			1						Not Most Spend		Not Most Transactions
 5	Diet Chris Cola			9,443.9			1						Not Most Spend		Not Most Transactions
-6	Prego					9,443.9			1						Not Most Spend		Not Most Transactions
-7	Cracker Barrel Cheese	5,213.77		2						Not Most Spend		Not Most Transactions
+6	Swanson					7,187.14		11						Not Most Spend		Most Transactions
+7	Cracker Barrel Cheese	4,885.89		2						Not Most Spend		Not Most Transactions
 8	Jell-O					4,754.37		2						Not Most Spend		Not Most Transactions
 9	Cheetos					4,721.95		1						Not Most Spend		Not Most Transactions
 10	Kettle Brand			2,400.91		3						Not Most Spend		Not Most Transactions
