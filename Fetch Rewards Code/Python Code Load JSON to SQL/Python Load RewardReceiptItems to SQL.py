@@ -32,9 +32,10 @@ def truncate_table_if_exists(table_name):
 # Truncate rewardsReceiptItems table if it exists
 truncate_table_if_exists('rewardsReceiptItems')
 
-# Create rewardsReceiptItems table
+# Create rewardsReceiptItems table with surrogate key
 create_items_table = """
 CREATE TABLE IF NOT EXISTS rewardsReceiptItems (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     receiptId VARCHAR(24),
     barcode VARCHAR(50),
     description TEXT,
@@ -48,7 +49,6 @@ CREATE TABLE IF NOT EXISTS rewardsReceiptItems (
     userFlaggedNewItem BOOLEAN,
     userFlaggedPrice FLOAT,
     userFlaggedQuantity INT,
-    PRIMARY KEY (receiptId, partnerItemId),
     FOREIGN KEY (receiptId) REFERENCES receipts(id)
 );
 """
@@ -88,4 +88,4 @@ conn.commit()
 cursor.close()
 conn.close()
 
-print("RewardsReceiptItems data successfully inserted!")
+print("RewardsReceiptItems data successfully inserted")
