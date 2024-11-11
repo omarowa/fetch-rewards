@@ -1,0 +1,56 @@
+ER Diagram Description File
+
+
+1. receipts Table
+_id (PK): Unique identifier for each receipt (NVarchar(36)).
+bonusPointsEarned: Integer value representing the number of bonus points earned for a receipt.
+bonusPointsEarnedReason: NVarchar(4000) that stores the reason for bonus points being awarded.
+createDate: Timestamp indicating when the receipt was created.
+dateScanned: Timestamp indicating when the receipt was scanned.
+finishedDate: Timestamp indicating when the processing of the receipt was completed.
+modifyDate: Timestamp indicating when the receipt was last modified.
+pointsAwardedDate: Integer value for the date when points were awarded.
+pointsEarned: Integer value representing the points earned from the receipt.
+purchaseDate: Timestamp indicating the date of the purchase on the receipt.
+purchasedItemCount: Integer value representing the total number of items on the receipt.
+rewardsReceiptStatus: NVarchar(50) indicating the status of the receipt processing.
+totalSpent: Money(38, 2) field representing the total amount spent as captured on the receipt.
+userId (FK): NVarchar(24) that relates to the users table, linking a user to the receipt.
+
+
+2. users Table
+_id (PK): Unique identifier for each user (NVarchar(24)).
+state: Char(2) representing the state abbreviation of the user's location.
+createdDate: Timestamp indicating when the user created their account.
+lastLogin: Timestamp indicating the user's last login time.
+role: Char(50) indicating the role of the user (e.g., 'CONSUMER').
+active: Boolean value indicating if the user account is active.
+
+
+3. rewardsReceiptItemList Table
+_id (PK): Unique identifier for each item (Integer).
+receiptId (FK): NVarchar(36) that relates to the receipts table, linking items to receipts.
+barcode (FK): NVarchar(50) that relates to the brands table, linking items to brands.
+description: Text(1000) providing a description of the item.
+finalPrice: Float(2) indicating the final price of the item.
+itemPrice: Float(2) representing the original price of the item.
+needsFetchReview: Boolean indicating if the item needs additional review.
+partnerItemId: NVarchar(50) identifying the partner item ID.
+preventTargetGapPoints: Boolean indicating if target gap points should be prevented.
+quantityPurchased: Number(11, 0) representing the quantity purchased.
+userFlaggedBarcode: NVarchar(50) containing a user-flagged barcode for the item.
+userFlaggedNewItem: Boolean indicating if the user flagged the item as new.
+userFlaggedPrice: Float(2) representing the user-flagged price of the item.
+userFlaggedQuantity: Number(11, 0) representing the user-flagged quantity.
+
+
+4. brands Table
+_id (PK): Unique identifier for each brand (NVarchar(24)).
+barcode (FK): NVarchar(50) that relates to the rewardsReceiptItemList table, linking brands to items.
+brandCode: NVarchar(255) representing a unique code for the brand.
+category: NVarchar(255) indicating the category of products the brand sells.
+categoryCode: NVarchar(255) that specifies the category code for the brand.
+cpg_id: NVarchar(24) representing the CPG (Consumer Packaged Goods) ID.
+cpg_ref: NVarchar(50) for referencing the CPG collection.
+name: NVarchar(255) for the brand name.
+topBrand: Boolean indicating whether the brand is featured as a 'top brand.'

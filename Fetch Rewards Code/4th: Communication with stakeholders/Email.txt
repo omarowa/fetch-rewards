@@ -1,0 +1,44 @@
+Subject: Data Quality Feedback and Next Steps for Data Volume Handeling
+
+Hello,
+
+I hope you're doing well. I wanted to share some observations and questions based on the data analysis I’ve conducted for the Fetch Rewards data. This message outlines some key data quality findings, how I discovered them, and steps we can take to improve data accuracy and performance as the data volume grows larger.
+
+Key Questions and Observations:
+
+How were the userFlaggedBarcode fields intended to be used, and what do empty or missing values indicate about user interactions?
+Is the high presence of test data in the brands table intentional, or does it need to be excluded for more accurate analysis?
+
+Data Quality Issues:
+
+Through SQL queries and data profiling, we identified several key data quality issues:
+Missing Barcodes: Many entries in the rewardsReceiptItems table are missing both barcode and userFlaggedBarcode.
+Data Consistency Issues: Discrepancies between itemPrice and finalPrice were found without corresponding needsFetchReview flags.
+Test Data Presence: We found a significant number of test entries in the brands table, which could skew analysis and performance.
+Duplicate Records: The users table contained 495 total rows but only 212 unique entries, indicating a potential duplication issue.
+
+
+In order to resolve the data quality issues, I'd like clarification on the following questions.
+
+1. Whether test data should be included in any production databases.
+
+2. Futhermore, confirmation on how missing barcode values should be handled. We may think about implementing a flag      
+   column in our table to easily distinguish any test records, or we may consider migrating the test records to our UAT/Dev enviroment to properly seperate our production brands data and test records.
+
+3. Guidance on appropriate thresholds for data integrity checks (e.g., pricing mismatches).
+ 
+
+In order to help our team optimize the data assets, we are requesting access to a data dictionary or more detailed documentation on expected values and relationships between fields (e.g validation views that show relationships between different tables in our database. This can be requested through the Database Administrator team.).
+Also, clarification on the expected frequency and volume of data updates or changes, which can help fine-tune optimization strategies.
+
+
+As the volume of records increases, queries may slow down without optimized indexing. We have user stories in our backlog to implement indices on frequently queried fields such as barcode and userId.
+As well as a research spike to explore the idea of creating historical datasets in our cloud databases that hold older records that are purely used for analysis purposes.
+We also have an issue with redundant data that could slow down data retrieval and analysis. We recommend incorporating deduplication processes before data loads.
+Our team will also work towards automating regular data integrity checks would ensure consistent, high-quality data for business analysis.
+
+I’m happy to discuss these insights in more detail on a call if any points are ambigous.
+
+Omar Abouel Maaty
+Analytics Engineer
+Fetch Rewards
