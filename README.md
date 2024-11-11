@@ -8,6 +8,15 @@ I also noticed The rewardsReceiptItemList in the receipts.json is an array (list
 I utilized the software Vertabelo to construct the Entity Relationship Diagram.
   
 Repo contents located in Fetch Rewards Code:
+* 1st: ER Diagram folder (This folder contains a Entity Relationship diagram for the schema fetch)
+  * ![alt text](<Fetch Rewards Code/1st: ER Diagram/fetch-reward-2024-11-09_23-18.png>)
+    
+* 2nd: SQL Queries
+  * This folder contains a Entity Relationship diagram for the schema fetch
+    
+* 1st: ER Diagram folder
+  * This folder contains a Entity Relationship diagram for the schema fetch
+    
 * 1st: ER Diagram folder
   * This folder contains a Entity Relationship diagram for the schema fetch
  
@@ -20,4 +29,7 @@ Repo contents located in Fetch Rewards Code:
   * brands.json
   * receipts.json
   * users.json
+    
+* 1st: ER Diagram folder
+  * This folder contains a Entity Relationship diagram for the schema fetch
  
