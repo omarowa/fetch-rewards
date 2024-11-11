@@ -9,16 +9,33 @@ I utilized the software Vertabelo to construct the Entity Relationship Diagram.
   
 Repo contents located in Fetch Rewards Code:
 * 1st: ER Diagram folder (This folder contains a Entity Relationship diagram for the schema fetch)
-  * ![alt text](<Fetch Rewards Code/1st: ER Diagram/fetch-reward-2024-11-09_23-18.png>)
+  * fetch-reward-2024-11-09_23-18.png (ER Diagram Picture)
+  * Information ER Diagram (Data dictionary)
     
 * 2nd: SQL Queries
-  * This folder contains a Entity Relationship diagram for the schema fetch
+  * Query1.png (Image of query1.sql execution)
+  * Query1.sql (This query file answers two questions listed in the coding assessment)
+  * Query2.png (Image of query2.sql execution)
+  * Query2.sql (This query file answers two questions listed in the coding assessment)
     
-* 1st: ER Diagram folder
-  * This folder contains a Entity Relationship diagram for the schema fetch
-    
-* 1st: ER Diagram folder
-  * This folder contains a Entity Relationship diagram for the schema fetch
+* 3rd: Data Quality Analysis
+  * brands and barcode (folder containing analysis against brands table and barcode column)
+      * Analysis brands and barcode.sql
+      * Query1.png (Image of query execution)
+      * Query2.png (image of query execution)
+  * receipts (folder containing analysis against receipts table)
+      * Analysis receipts and rewardsReceiptItems.sql 
+      * Query1.png (Image of query execution)
+      * Query2.png (image of query execution)
+      * Query3.png (image of query execution)
+  * users (folder containing analysis against users column)
+      * Analysis.sql
+      * Query1.png (Image of query execution)
+      * Query2.png (image of query execution)
+      * Query3.png (image of query execution)
+            
+* 4th: Communication with stakeholders
+  * Email.txt (Email communication to stakeholders requested in coding assessment)
  
 * Python Code Load JSON to SQL
   * Python Load Brands to SQL.py
@@ -30,6 +47,9 @@ Repo contents located in Fetch Rewards Code:
   * receipts.json
   * users.json
     
-* 1st: ER Diagram folder
-  * This folder contains a Entity Relationship diagram for the schema fetch
+* Table and Schema definitions (folder that contains table definitions for fetch schema)
+  * brands.sql
+  * receipts.sql
+  * rewardsReceiptItems.sql
+  * users.sql
  
